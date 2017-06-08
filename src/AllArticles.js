@@ -11,16 +11,39 @@ const style = {
 
 export default class AllArticles extends Component {
   render () {
-    return (
-      <div style={style} className='atricleWrapper'>
+    // console.log(this.props.markdownList)
+    if (this.props.markdownList === undefined) {
+      return null
+    }
+    const articles = []
+
+    this.props.markdownList.forEach((content) => {
+      articles.push(
         <article
-          dangerouslySetInnerHTML={{__html: this.props.markDownTest}}
-          />
-        </div>
+          style={style}
+          className='atricleWrapper'
+          dangerouslySetInnerHTML={{__html: content}}
+        />
       )
+    })
+
+
+    // const articles = this.props.markdownList.map((content) => {
+    // return
+    //   <article
+    //     dangerouslySetInnerHTML={{__html: content}}
+    //   />
+    // })
+
+    console.log(articles)
+    return (
+      <div>
+        {articles}
+      </div>
+    )
   }
 }
 
 AllArticles.propTypes = {
-  markDownTest: PropTypes.string
+  markdownList: PropTypes.array
 }

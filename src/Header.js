@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import logo from '../public/assets/logo.jpg'
+import logo from './assets/logo.jpg'
 
 const style = {
   margin: '20px 0 50px'

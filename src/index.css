@@ -22,6 +22,10 @@ article p {
   font-size: 1.2em;
 }
 
+article:not(:last-child) {
+  margin-bottom: 50px!important;
+}
+
 article h1:first-child {
   text-align: center;
 }
@@ -80,7 +84,7 @@ ol, ul {
     linear-gradient(to right, #eee 30px, transparent 30px),
     linear-gradient(to bottom, #eee 30px, transparent 30px),
     linear-gradient(to bottom, #eee 30px, transparent 30px);
-  background-size: 100% 2px, 100% 2px, 2px 100%, 2px 100%;
+  background-size: 100% 3px, 100% 3px, 3px 100%, 3px 100%;
   background-position: -15px 0%, -15px 100%, 0% -15px, 100% -15px;
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
 }
