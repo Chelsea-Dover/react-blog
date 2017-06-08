@@ -92,6 +92,10 @@ blockquote {
   width: 90%;
 }
 
+hr {
+  border: solid #eee 1px;
+}
+
 pre {
   background: #eee;
   padding: 5px;
