@@ -11,31 +11,20 @@ const style = {
 
 export default class AllArticles extends Component {
   render () {
-    // console.log(this.props.markdownList)
     if (this.props.markdownList === undefined) {
       return null
     }
-    const articles = []
-
-    this.props.markdownList.forEach((content) => {
-      articles.push(
+    const articles = this.props.markdownList.map((content) => {
+      return (
         <article
           style={style}
-          className='atricleWrapper'
+          className='articleWrapper'
           dangerouslySetInnerHTML={{__html: content}}
+          key={content}
         />
       )
     })
 
-
-    // const articles = this.props.markdownList.map((content) => {
-    // return
-    //   <article
-    //     dangerouslySetInnerHTML={{__html: content}}
-    //   />
-    // })
-
-    console.log(articles)
     return (
       <div>
         {articles}

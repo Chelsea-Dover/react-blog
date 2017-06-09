@@ -37,6 +37,7 @@ class App extends Component {
           this.setState({
             markdownList: newMarkdownList
           })
+          console.log(this.state.markdownList)
         })
       })
   }

@@ -78,7 +78,7 @@ ol, ul {
   color: #a9a9a9;
 }
 
-.atricleWrapper {
+.articleWrapper {
   background-image:
     linear-gradient(to right, #eee 30px, transparent 30px),
     linear-gradient(to right, #eee 30px, transparent 30px),
@@ -87,6 +87,11 @@ ol, ul {
   background-size: 100% 3px, 100% 3px, 3px 100%, 3px 100%;
   background-position: -15px 0%, -15px 100%, 0% -15px, 100% -15px;
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+}
+
+.atricleWrapper:hover {
+  background: rgba(243, 243, 243, 0.55);
+  transition: 0.3s;
 }
 
 blockquote {
