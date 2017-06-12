@@ -6,7 +6,7 @@ const style = {
   width: '78%',
   margin: '10px auto',
   borderRadius: '3px',
-  fontSize: '1.1em',
+  fontSize: '1.1em'
 }
 
 export default class AllArticles extends Component {

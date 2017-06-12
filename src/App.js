@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 import Header from './Header'
 import Footer from './Footer'
 import AllArticles from './AllArticles'
@@ -9,10 +9,12 @@ const context = require.context('./articles', true, /\.(md)$/)
 const files = []
 const fileNames = []
 
-context.keys().forEach((filename)=>{
+context.keys().forEach((filename) => {
   files.push(context(filename))
   fileNames.push(filename)
 })
+
+/* global fetch */
 
 class App extends Component {
   constructor (props) {
@@ -25,24 +27,24 @@ class App extends Component {
     }
   }
 
-  componentWillMount() {
+  componentWillMount () {
     files.forEach((path) => {
       fetch(path)
         .then(response => {
           return response.text()
         })
         .then(text => {
-          const newMarkdownList = this.state.markdownList.map((content) => {return content})
+          const newMarkdownList = this.state.markdownList.map((content) => { return content })
           newMarkdownList.push(marked(text))
           this.setState({
             markdownList: newMarkdownList
           })
           console.log(this.state.markdownList)
         })
-      })
+    })
   }
 
-  render() {
+  render () {
     return (
       <div>
         <Header
@@ -58,8 +60,8 @@ class App extends Component {
           footerMessage={this.state.footerMessage}
         />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

@@ -10,7 +10,14 @@
   "devDependencies": {
     "enzyme": "^2.8.2",
     "react-addons-test-utils": "^15.5.1",
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.7",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^4.3.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-standard": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
