@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 const style = {
   padding: '20px 35px',
@@ -14,14 +15,21 @@ export default class AllArticles extends Component {
     if (this.props.markdownList === undefined) {
       return null
     }
-    const articles = this.props.markdownList.map((content) => {
+    const articles = this.props.markdownList.map((content, id) => {
       return (
-        <article
-          style={style}
-          className='articleWrapper'
-          dangerouslySetInnerHTML={{__html: content}}
-          key={content}
-        />
+        <Router key={id}>
+          <div
+            style={style}
+            className='articleWrapper'>
+            <article
+              dangerouslySetInnerHTML={{__html: content}}
+              key={this.props.linkPaths[id]}
+            />
+            <Link to={`/post/${this.props.linkPaths[id]}`}>
+                Full page
+            </Link>
+          </div>
+        </Router>
       )
     })
 
@@ -34,5 +42,6 @@ export default class AllArticles extends Component {
 }
 
 AllArticles.propTypes = {
-  markdownList: PropTypes.array
+  markdownList: PropTypes.array,
+  linkPaths: PropTypes.array
 }
