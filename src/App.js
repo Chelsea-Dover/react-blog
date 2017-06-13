@@ -3,8 +3,9 @@ import './App.css'
 import Header from './Header'
 import Footer from './Footer'
 import AllArticles from './AllArticles'
+import SeparatePost from './SeparatePost'
 import marked from 'marked'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 // import { Route, IndexRoute } from 'react-router'
 
 const context = require.context('./articles', true, /\.(md)$/)
@@ -25,8 +26,7 @@ class App extends Component {
       blogTitle: 'Best Blog',
       subTitle: 'This is the very best Best Blog!',
       footerMessage: 'Thanks for stopping by!',
-      markdownList: [],
-      paths: []
+      markdownList: []
     }
   }
 
@@ -37,29 +37,32 @@ class App extends Component {
           return response.text()
         })
         .then(text => {
-          const newMarkdownList = this.state.markdownList.map((content) => { return content })
-          const newPath = this.state.paths.map((path) => { return path })
-          newPath.push(path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.')))
-          newMarkdownList.push(marked(text))
+          const urlPath = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'))
+          const newMarkdownList = this.state.markdownList.map((item) => Object.assign({}, item))
+          newMarkdownList.push({content: marked(text), path: urlPath})
           this.setState({
-            markdownList: newMarkdownList,
-            paths: newPath
+            markdownList: newMarkdownList
           })
         })
     })
   }
 
   render () {
-    const Page = ({ match }) => (
-      <div>
-        <Link to={`/post/test`}>link</Link>
-        <div>HEllo!</div>
-      </div>
-    )
+    const SinglePost = ({ match }) => {
+      console.log(match)
+      if (match === undefined) {
+        return null
+      }
+      return (
+        <SeparatePost
+          articleName={match.params.id}
+          markdownList={this.state.markdownList}
+        />
+      )
+    }
     const ArticleList = () => (
       <AllArticles
         markdownList={this.state.markdownList}
-        linkPaths={this.state.paths}
       />
     )
     return (
@@ -69,7 +72,7 @@ class App extends Component {
             blogTitle={this.state.blogTitle}
             subTitle={this.state.subTitle}
           />
-          <Route path='/post/:id' component={Page} />
+          <Route path='/post/:id' component={SinglePost} />
           <Route exact path='/' component={ArticleList} />
           <Footer
             footerMessage={this.state.footerMessage}

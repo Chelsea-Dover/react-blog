@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import logo from './assets/logo.jpg'
+import { Link } from 'react-router-dom'
 
 const style = {
   margin: '20px 0 50px'
@@ -29,7 +30,9 @@ export default class Header extends Component {
           alt={this.props.blogTitle + ' logo'}
           style={blogIconStyle}
           />
-        <h1>{this.props.blogTitle}</h1>
+        <Link to={`/`}>
+          <h1 className={'headerLink'} >{this.props.blogTitle}</h1>
+        </Link>
         <h2 style={subheadStyle}>{this.props.subTitle}</h2>
       </div>
     )

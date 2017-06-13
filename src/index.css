@@ -54,6 +54,15 @@ a {
   transition: 0.5s;
 }
 
+.headerLink {
+  color: #333;
+  transition: 0.3s;
+}
+
+.headerLink:hover {
+  color: rgb(169, 169, 169);
+}
+
 a:hover {
   color: #55D6BE;
 }
