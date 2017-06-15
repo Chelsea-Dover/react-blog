@@ -9,6 +9,10 @@ const style = {
   fontSize: '1.1em'
 }
 
+const padding = {
+  paddingBottom: '140px'
+}
+
 export default class SeparatePost extends Component {
   render () {
     const post = this.props.markdownList.find((x) => {
@@ -20,10 +24,11 @@ export default class SeparatePost extends Component {
     return (
       <div
         key={this.props.articleName}
-        style={style}
-        className='articleWrapper'
+        style={padding}
        >
         <article
+          style={style}
+          className='articleWrapper'
           dangerouslySetInnerHTML={{__html: post.content}}
         />
       </div>

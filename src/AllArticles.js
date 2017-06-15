@@ -10,6 +10,10 @@ const style = {
   fontSize: '1.1em'
 }
 
+const padding = {
+  paddingBottom: '140px'
+}
+
 export default class AllArticles extends Component {
   render () {
     if (this.props.markdownList === undefined) {
@@ -18,9 +22,10 @@ export default class AllArticles extends Component {
     const articles = this.props.markdownList.map((item, id) => {
       return (
         <div
-          key={id}
           style={style}
-          className='articleWrapper'>
+          className='articleWrapper'
+          key={id}
+          >
           <article
             dangerouslySetInnerHTML={{__html: item.content}}
             key={item.path}
@@ -33,7 +38,7 @@ export default class AllArticles extends Component {
     })
 
     return (
-      <div>
+      <div style={padding}>
         {articles}
       </div>
     )

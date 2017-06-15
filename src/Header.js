@@ -3,17 +3,6 @@ import PropTypes from 'prop-types'
 import logo from './assets/logo.jpg'
 import { Link } from 'react-router-dom'
 
-const style = {
-  margin: '20px 0 50px'
-}
-const subheadStyle = {
-  padding: '20px',
-  borderTop: 'solid 2px #eee',
-  borderBottom: 'solid 2px #eee',
-  width: '80%',
-  margin: 'auto',
-  color: '#a9a9a9'
-}
 const blogIconStyle = {
   width: '6em',
   height: '6em',
@@ -24,16 +13,18 @@ const blogIconStyle = {
 export default class Header extends Component {
   render () {
     return (
-      <div style={style}>
+      <div className={'headerWrapper'}>
         <img
           src={logo}
           alt={this.props.blogTitle + ' logo'}
           style={blogIconStyle}
           />
-        <Link to={`/`}>
-          <h1 className={'headerLink'} >{this.props.blogTitle}</h1>
-        </Link>
-        <h2 style={subheadStyle}>{this.props.subTitle}</h2>
+        <div>
+          <Link to={`/`}>
+            <h1 className={'headerLink'} >{this.props.blogTitle}</h1>
+          </Link>
+          <h2 className={'subheadStyle'}>{this.props.subTitle}</h2>
+        </div>
       </div>
     )
   }

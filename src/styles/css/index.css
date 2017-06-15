@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css?family=Cardo|Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans+Condensed:300");
+body, html {
+  margin: 0;
+  text-rendering: geometricPrecision;
+  color: #333; }
+
+html {
+  min-height: 100%;
+  position: relative; }
+
+a {
+  text-decoration: none;
+  transition: 0.5s; }
+
+article img {
+  max-width: 95%; }
+
+.Theme1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Cardo', serif; }
+  .Theme1 blockquote {
+    padding-left: 5px;
+    margin: 0 auto;
+    width: 90%;
+    border-left: solid 3px #eee; }
+  .Theme1 table {
+    border-collapse: collapse;
+    border: solid 2px #eee; }
+    .Theme1 table td, .Theme1 table th {
+      border: solid 2px #eee; }
+    .Theme1 table th {
+      font-weight: bold; }
+  .Theme1 ol, .Theme1 pre, .Theme1 table, .Theme1 ul {
+    width: 90%;
+    margin: auto; }
+  .Theme1 hr {
+    border: solid #eee 1px; }
+  .Theme1 pre {
+    background: #eee;
+    padding: 5px;
+    overflow: auto; }
+  .Theme1 .header-wrapper {
+    margin: 20px 0 50px; }
+  .Theme1 h1, .Theme1 h2, .Theme1 h3, .Theme1 h4, .Theme1 h5, .Theme1 h6 {
+    font-family: 'Montserrat', sans-serif; }
+  .Theme1 article img {
+    border: solid 3px #e9e7e7; }
+  .Theme1 article p {
+    color: #a9a9a9;
+    font-size: 1.2em; }
+  .Theme1 article:not(:last-child) {
+    margin-bottom: 50px !important; }
+  .Theme1 article h1:first-child {
+    text-align: center; }
+  .Theme1 article * {
+    text-align: left; }
+  .Theme1 a {
+    color: #3F88C5; }
+    .Theme1 a:hover {
+      color: #55D6BE; }
+    .Theme1 a:visited {
+      color: #55D6BE; }
+      .Theme1 a:visited:hover {
+        color: #3F88C5; }
+  .Theme1 .headerLink {
+    color: #333;
+    transition: 0.3s; }
+    .Theme1 .headerLink:hover {
+      color: darkgray; }
+  .Theme1 li {
+    text-align: left; }
+  .Theme1 ol,
+  .Theme1 ul {
+    color: #a9a9a9; }
+  .Theme1 .articleWrapper {
+    background-image: linear-gradient(to right, #eee 30px, transparent 30px), linear-gradient(to right, #eee 30px, transparent 30px), linear-gradient(to bottom, #eee 30px, transparent 30px), linear-gradient(to bottom, #eee 30px, transparent 30px);
+    background-size: 100% 3px, 100% 3px, 3px 100%, 3px 100%;
+    background-position: -15px 0%, -15px 100%, 0 -15px, 100% -15px;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; }
+    .Theme1 .articleWrapper:hover {
+      background: rgba(243, 243, 243, 0.55);
+      transition: 0.3s; }
+  .Theme1 .subheadStyle {
+    padding: 20px;
+    border-top: solid 2px #eee;
+    border-bottom: solid 2px #eee;
+    width: 80%;
+    margin: auto;
+    color: #a9a9a9; }
+
+.Theme2 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  background: #efeded;
+  width: 100%;
+  min-height: 100vh; }
+  .Theme2 blockquote {
+    padding-left: 5px;
+    margin: 0 auto;
+    width: 90%;
+    border-left: solid 3px #5d5d5d; }
+  .Theme2 table {
+    border-collapse: collapse;
+    border: solid 2px #5d5d5d; }
+    .Theme2 table td, .Theme2 table th {
+      border: solid 2px #5d5d5d; }
+    .Theme2 table th {
+      font-weight: bold; }
+  .Theme2 ol, .Theme2 pre, .Theme2 table, .Theme2 ul {
+    width: 90%;
+    margin: auto; }
+  .Theme2 hr {
+    border: solid #5d5d5d 1px; }
+  .Theme2 pre {
+    background: #eee;
+    padding: 5px;
+    overflow: auto; }
+  .Theme2 blockquote {
+    border-left: solid 3px #5d5d5d; }
+  .Theme2 h1, .Theme2 h2, .Theme2 h3, .Theme2 h4, .Theme2 h5, .Theme2 h6 {
+    font-family: 'Montserrat', sans-serif; }
+  .Theme2 a {
+    color: #EF8354; }
+    .Theme2 a:hover {
+      color: #f6a582; }
+  .Theme2 .headerWrapper, .Theme2 > div:last-child {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #EF8354;
+    color: #fff;
+    padding: 20px 100px; }
+    .Theme2 .headerWrapper a, .Theme2 > div:last-child a {
+      color: #333;
+      transition: 0.3s; }
+      .Theme2 .headerWrapper a:hover, .Theme2 > div:last-child a:hover {
+        color: #4c4a4a; }
+    .Theme2 .headerWrapper div, .Theme2 > div:last-child div {
+      padding-left: 20px; }
+  .Theme2 .articleWrapper {
+    background: #fff; }
+
+@media only screen and (max-width: 500px) {
+  .Theme2 .headerWrapper, .Theme2 > div:last-child {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px 0; } }
+
+/*# sourceMappingURL=index.css.map */
