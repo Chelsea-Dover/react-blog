@@ -1,10 +1,19 @@
 {
-"blogTitle": "Best Blog",
-"subTitle": "This is the very best Best Blog!",
-"footerMessage": "Thanks for stopping by!",
-"email": "",
-"githubUsername": "",
-"githubBranch": "",
-"repo": "",
-"blogTheme":"Theme2"
+  "titles": {
+    "blogTitle": "Best Blog",
+    "subTitle": "This is the very best Best Blog!",
+    "footerMessage": "Thanks for stopping by!"
+  },
+  "contact": {
+    "email": "",
+    "linkedin": "",
+    "twitter": "",
+    "github":""
+  },
+  "config": {
+    "blogTheme":"Theme2",
+    "githubUsername": "",
+    "githubBranch": "",
+    "repo": ""
+  }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './styles/css/App.css'
+import './client/App.css'
 import Header from './Header'
 import Footer from './Footer'
 import AllArticles from './AllArticles'
@@ -62,15 +62,15 @@ class App extends Component {
     )
     return (
       <Router>
-        <div className={userConfig.blogTheme}>
+        <div className={userConfig.config.blogTheme}>
           <Header
-            blogTitle={userConfig.blogTitle}
-            subTitle={userConfig.subTitle}
+            blogTitle={userConfig.titles.blogTitle}
+            subTitle={userConfig.titles.subTitle}
           />
           <Route path='/post/:id' component={SinglePost} />
           <Route exact path='/' component={ArticleList} />
           <Footer
-            footerMessage={userConfig.footerMessage}
+            footerMessage={userConfig.titles.footerMessage}
           />
         </div>
       </Router>
