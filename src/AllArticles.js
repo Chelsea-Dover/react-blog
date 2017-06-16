@@ -38,7 +38,7 @@ export default class AllArticles extends Component {
     })
 
     return (
-      <div style={padding}>
+      <div className={'AllArticleWrapper'} style={padding}>
         {articles}
       </div>
     )

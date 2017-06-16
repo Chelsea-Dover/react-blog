@@ -4,18 +4,10 @@ import Header from './Header'
 import Footer from './Footer'
 import AllArticles from './AllArticles'
 import SeparatePost from './SeparatePost'
-import marked from 'marked'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import userConfig from './client/config.json'
+import marked from 'marked'
 
-const context = require.context('./articles/', true, /\.(md)$/)
-const files = []
-const fileNames = []
-
-context.keys().forEach((filename) => {
-  files.push(context(filename))
-  fileNames.push(filename)
-})
+const SERVER_ROOT = 'https://cmsblog-aaa94.firebaseio.com'
 
 /* global fetch */
 
@@ -23,24 +15,39 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      markdownList: []
+      markdownList: [],
+      config: [],
+      contact: [],
+      titles: []
     }
   }
   componentWillMount () {
-    files.forEach((path) => {
-      fetch(path)
-        .then(response => {
-          return response.text()
-        })
-        .then(text => {
-          const urlPath = path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf('.'))
-          const newMarkdownList = this.state.markdownList.map((item) => Object.assign({}, item))
-          newMarkdownList.push({content: marked(text), path: urlPath})
+    fetch(`${SERVER_ROOT}/articles.json`)
+      .then(response => {
+        console.log('It worked!')
+        console.log(response)
+        return response.json()
+      })
+      .then(text => {
+        const newMarkdownList = this.state.markdownList.map((item) => Object.assign({}, item))
+        for (const x in text) {
+          newMarkdownList.push({content: marked(text[x].data), path: x})
           this.setState({
             markdownList: newMarkdownList
           })
-        })
-    })
+        }
+      })
+
+    fetch(`${SERVER_ROOT}/userConfig/config.json`)
+      .then(output => {
+        console.log('It worked!2')
+        return output.json()
+      })
+      .then((userConfig) => {
+        this.setState({config: userConfig.config})
+        this.setState({contact: userConfig.contact})
+        this.setState({titles: userConfig.titles})
+      })
   }
 
   render () {
@@ -62,15 +69,15 @@ class App extends Component {
     )
     return (
       <Router>
-        <div className={userConfig.config.blogTheme}>
+        <div className={this.state.config.blogTheme}>
           <Header
-            blogTitle={userConfig.titles.blogTitle}
-            subTitle={userConfig.titles.subTitle}
+            blogTitle={this.state.titles.blogTitle}
+            subTitle={this.state.titles.subTitle}
           />
           <Route path='/post/:id' component={SinglePost} />
           <Route exact path='/' component={ArticleList} />
           <Footer
-            footerMessage={userConfig.titles.footerMessage}
+            footerMessage={this.state.titles.footerMessage}
           />
         </div>
       </Router>

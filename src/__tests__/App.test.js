@@ -1,12 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from '../App'
-import { shallow, mount, render } from 'enzyme'
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import App from '../App'
+// import { shallow, mount, render } from 'enzyme'
 
+// /* global describe shallow beforeEach it */
 
-/* global it */
-
-it('renders without crashing', () => {
-  const div = document.createElement('div')
-  ReactDOM.render(<App />, div)
-})
+// describe('SearchBox tests', () => {
+//   let wrapper
+//   beforeEach(() => {
+//     wrapper = shallow(
+//
+//     )
+//   })
+//
+//   it('', () => {
+//
+//   })
+// })
