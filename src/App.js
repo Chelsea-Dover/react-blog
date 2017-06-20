@@ -40,7 +40,7 @@ class App extends Component {
 
     fetch(`${SERVER_ROOT}/userConfig/config.json`)
       .then(output => {
-        console.log('It worked!2')
+        console.log('It worked!')
         return output.json()
       })
       .then((userConfig) => {

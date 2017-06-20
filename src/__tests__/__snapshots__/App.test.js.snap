@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App tests does a snapshot check 1`] = `
+<div
+  className={undefined}
+>
+  <div
+    className="headerWrapper"
+  >
+    <img
+      alt="undefined logo"
+      src="logo.jpg"
+      style={
+        Object {
+          "border": "solid 2px #eee",
+          "borderRadius": "50%",
+          "height": "6em",
+          "width": "6em",
+        }
+      }
+    />
+    <div>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <h1
+          className="headerLink"
+        />
+      </a>
+      <h2
+        className="subheadStyle"
+      />
+    </div>
+  </div>
+  <div
+    className="AllArticleWrapper"
+    style={
+      Object {
+        "paddingBottom": "140px",
+      }
+    }
+  />
+  <div
+    className="footerWrapper"
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "padding": "20px 100px",
+        "position": "absolute",
+        "right": 0,
+      }
+    }
+  >
+    <h2 />
+  </div>
+</div>
+`;

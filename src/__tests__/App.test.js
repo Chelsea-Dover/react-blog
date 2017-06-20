@@ -1,19 +1,33 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom'
-// import App from '../App'
-// import { shallow, mount, render } from 'enzyme'
+import React from 'react'
+import App from '../App'
+import renderer from 'react-test-renderer'
+import {shallow} from 'enzyme'
+import fetch from 'jest-fetch-mock'
+import {FAKE_DATA} from '../test-data'
 
-// /* global describe shallow beforeEach it */
+global.fetch = fetch
 
-// describe('SearchBox tests', () => {
-//   let wrapper
-//   beforeEach(() => {
-//     wrapper = shallow(
-//
-//     )
-//   })
-//
-//   it('', () => {
-//
-//   })
-// })
+/* global expect describe it beforeEach */
+
+fetch.mockResponse(JSON.stringify(FAKE_DATA))
+
+describe('App tests', () => {
+  it('does a snapshot check', () => {
+    console.log(FAKE_DATA)
+    const component = renderer.create(<App />)
+    const json = component.toJSON()
+    expect(json).toMatchSnapshot()
+  })
+  describe('', () => {
+    let wrapper
+    beforeEach(() => {
+      wrapper = shallow(
+        <App
+        />
+      )
+    })
+    it('', () => {
+      console.log(wrapper.props())
+    })
+  })
+})
