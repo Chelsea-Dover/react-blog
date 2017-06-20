@@ -1,0 +1,19 @@
+export const CONFIG_TEST = {
+  'titles': {
+    'blogTitle': 'Best Blog',
+    'subTitle': 'This is the very best Best Blog!',
+    'footerMessage': 'Thanks for stopping by!'
+  },
+  'contact': {
+    'email': '',
+    'linkedin': '',
+    'twitter': '',
+    'github': ''
+  },
+  'config': {
+    'blogTheme': 'Theme2',
+    'githubUsername': '',
+    'githubBranch': '',
+    'repo': ''
+  }
+}

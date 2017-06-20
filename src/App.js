@@ -24,12 +24,13 @@ class App extends Component {
   componentWillMount () {
     fetch(`${SERVER_ROOT}/articles.json`)
       .then(response => {
-        console.log('It worked!')
-        console.log(response)
+        // console.log('It worked!')
+        // console.log(response)
         return response.json()
       })
       .then(text => {
         const newMarkdownList = this.state.markdownList.map((item) => Object.assign({}, item))
+        // console.log(text)
         for (const x in text) {
           newMarkdownList.push({content: marked(text[x].data), path: x})
           this.setState({
@@ -37,10 +38,13 @@ class App extends Component {
           })
         }
       })
+      .catch((error) => {
+        console.log(error)
+      })
 
     fetch(`${SERVER_ROOT}/userConfig/config.json`)
       .then(output => {
-        console.log('It worked!')
+        // console.log('It worked!')
         return output.json()
       })
       .then((userConfig) => {
@@ -48,9 +52,13 @@ class App extends Component {
         this.setState({contact: userConfig.contact})
         this.setState({titles: userConfig.titles})
       })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render () {
+    // console.log('HeLLO!')
     const SinglePost = ({ match }) => {
       if (match === undefined) {
         return null
