@@ -24,13 +24,14 @@ class App extends Component {
   componentWillMount () {
     fetch(`${SERVER_ROOT}/articles.json`)
       .then(response => {
-        // console.log('It worked!')
-        // console.log(response)
+        console.log('It worked!')
+        console.log(response)
         return response.json()
       })
       .then(text => {
+        console.log('It worked1')
         const newMarkdownList = this.state.markdownList.map((item) => Object.assign({}, item))
-        // console.log(text)
+        console.log('text')
         for (const x in text) {
           newMarkdownList.push({content: marked(text[x].data), path: x})
           this.setState({
