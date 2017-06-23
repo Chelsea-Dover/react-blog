@@ -30,9 +30,10 @@ class App extends Component {
       })
       .then(text => {
         console.log('It worked1')
+        console.log(text)
         const newMarkdownList = this.state.markdownList.map((item) => Object.assign({}, item))
-        console.log('text')
         for (const x in text) {
+          console.log('________', x, '__________')
           newMarkdownList.push({content: marked(text[x].data), path: x})
           this.setState({
             markdownList: newMarkdownList
@@ -45,7 +46,7 @@ class App extends Component {
 
     fetch(`${SERVER_ROOT}/userConfig/config.json`)
       .then(output => {
-        // console.log('It worked!')
+        console.log('It worked!')
         return output.json()
       })
       .then((userConfig) => {
@@ -59,7 +60,6 @@ class App extends Component {
   }
 
   render () {
-    // console.log('HeLLO!')
     const SinglePost = ({ match }) => {
       if (match === undefined) {
         return null
