@@ -1,7 +1,6 @@
 import React from 'react'
 import SeparatePost from '../SeparatePost'
 import {shallow} from 'enzyme'
-// import {FAKE_DATA} from '../test-data'
 
 const FAKE_DATA = [
   { content: '<h1>Hello!</h1>', path: 'pathHello' },

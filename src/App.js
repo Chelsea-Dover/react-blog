@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './client/App.css'
+import './styles/css/index.css'
 import Header from './Header'
 import Footer from './Footer'
 import AllArticles from './AllArticles'
@@ -24,21 +24,16 @@ class App extends Component {
   componentWillMount () {
     fetch(`${SERVER_ROOT}/articles.json`)
       .then(response => {
-        console.log('It worked!')
-        console.log(response)
         return response.json()
       })
       .then(text => {
-        console.log('It worked1')
-        console.log(text)
         const newMarkdownList = this.state.markdownList.map((item) => Object.assign({}, item))
-        for (const x in text) {
-          console.log('________', x, '__________')
+        Object.keys(text).forEach(x => {
           newMarkdownList.push({content: marked(text[x].data), path: x})
-          this.setState({
-            markdownList: newMarkdownList
-          })
-        }
+        })
+        this.setState({
+          markdownList: newMarkdownList
+        })
       })
       .catch((error) => {
         console.log(error)
@@ -46,13 +41,14 @@ class App extends Component {
 
     fetch(`${SERVER_ROOT}/userConfig/config.json`)
       .then(output => {
-        console.log('It worked!')
         return output.json()
       })
       .then((userConfig) => {
-        this.setState({config: userConfig.config})
-        this.setState({contact: userConfig.contact})
-        this.setState({titles: userConfig.titles})
+        this.setState({
+          config: userConfig.config,
+          contact: userConfig.contact,
+          titles: userConfig.titles
+        })
       })
       .catch((error) => {
         console.log(error)

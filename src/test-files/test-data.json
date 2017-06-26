@@ -1,0 +1,7 @@
+{
+  "articles":[
+    { "pathHello": "# Hello!" },
+    { "pathHey": "# Hey!" },
+    { "pathHowdy": "#Howdy!" }
+  ]
+}

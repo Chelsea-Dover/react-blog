@@ -16,6 +16,23 @@ a {
 article img {
   max-width: 95%; }
 
+.AllArticleWrapper {
+  padding-bottom: 140px; }
+
+.articleWrapper {
+  padding: 20px 35px;
+  width: 78%;
+  margin: 10px auto;
+  borderRadius: 3px;
+  fontSize: 1.1em; }
+
+.footerWrapper {
+  padding: 20px 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
 .Theme1 {
   margin: 0;
   padding: 0;
@@ -125,25 +142,25 @@ article img {
     color: #EF8354; }
     .Theme2 a:hover {
       color: #f6a582; }
-  .Theme2 .headerWrapper, .Theme2 > div:last-child {
+  .Theme2 .headerWrapper, .Theme2 .footerWrapper {
     display: flex;
     align-items: center;
     padding: 20px;
     background: #EF8354;
     color: #fff;
     padding: 20px 100px; }
-    .Theme2 .headerWrapper a, .Theme2 > div:last-child a {
+    .Theme2 .headerWrapper a, .Theme2 .footerWrapper a {
       color: #333;
       transition: 0.3s; }
-      .Theme2 .headerWrapper a:hover, .Theme2 > div:last-child a:hover {
+      .Theme2 .headerWrapper a:hover, .Theme2 .footerWrapper a:hover {
         color: #4c4a4a; }
-    .Theme2 .headerWrapper div, .Theme2 > div:last-child div {
+    .Theme2 .headerWrapper div, .Theme2 .footerWrapper div {
       padding-left: 20px; }
   .Theme2 .articleWrapper {
     background: #fff; }
 
 @media only screen and (max-width: 500px) {
-  .Theme2 .headerWrapper, .Theme2 > div:last-child {
+  .Theme2 .headerWrapper, .Theme2 .footerWrapper {
     flex-direction: column;
     text-align: center;
     padding: 10px 0; } }

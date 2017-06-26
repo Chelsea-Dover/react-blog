@@ -3,14 +3,13 @@ import App from '../App'
 import renderer from 'react-test-renderer'
 import {shallow} from 'enzyme'
 import fetch from 'jest-fetch-mock'
-import ARTICLE_CONTENT from '../test-data.json'
-// import CONFIG_CONTENT from '../config-test.json'
+import ARTICLE_CONTENT from '../test-files/test-data.json'
 
 global.fetch = require('jest-fetch-mock')
 
 /* global expect describe it beforeEach */
 
-describe('App tests', () => {
+describe.skip('App tests', () => {
   let wrapper, app
   beforeEach(() => {
     fetch.mockResponseOnce(JSON.stringify(ARTICLE_CONTENT))

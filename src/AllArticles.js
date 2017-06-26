@@ -2,18 +2,6 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const style = {
-  padding: '20px 35px',
-  width: '78%',
-  margin: '10px auto',
-  borderRadius: '3px',
-  fontSize: '1.1em'
-}
-
-const padding = {
-  paddingBottom: '140px'
-}
-
 export default class AllArticles extends Component {
   render () {
     if (this.props.markdownList === undefined) {
@@ -22,7 +10,6 @@ export default class AllArticles extends Component {
     const articles = this.props.markdownList.map((item, id) => {
       return (
         <div
-          style={style}
           className='articleWrapper'
           key={id}
           >
@@ -38,7 +25,7 @@ export default class AllArticles extends Component {
     })
 
     return (
-      <div className={'AllArticleWrapper'} style={padding}>
+      <div className={'AllArticleWrapper'}>
         {articles}
       </div>
     )
