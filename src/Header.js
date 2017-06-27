@@ -3,13 +3,6 @@ import PropTypes from 'prop-types'
 import logo from './assets/logo.jpg'
 import { Link } from 'react-router-dom'
 
-const blogIconStyle = {
-  width: '6em',
-  height: '6em',
-  borderRadius: '50%',
-  border: 'solid 2px #eee'
-}
-
 export default class Header extends Component {
   render () {
     return (
@@ -17,7 +10,7 @@ export default class Header extends Component {
         <img
           src={logo}
           alt={this.props.blogTitle + ' logo'}
-          style={blogIconStyle}
+          className={'blogIcon'}
           />
         <div>
           <Link to={`/`}>

@@ -6,7 +6,7 @@ body,html {
   text-rendering: geometricPrecision;
   color: #333;
 }
-// paddingBottom: '140px'
+
 html {
   min-height: 100%;
   position: relative;
@@ -25,12 +25,19 @@ article img {
   padding-bottom: 140px;
 }
 
+.blogIcon {
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  border: solid 2px #eee;
+}
+
 .articleWrapper {
   padding: 20px 35px;
   width: 78%;
   margin: 10px auto;
-  borderRadius: 3px;
-  fontSize: 1.1em;
+  border-radius: 3px;
+  font-size: 1.1em;
 }
 
 .footerWrapper {
