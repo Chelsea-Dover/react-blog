@@ -1,0 +1,32 @@
+{
+  "name": "rb2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "marked": "^0.3.6",
+    "node-fetch": "^1.7.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "next"
+  },
+  "devDependencies": {
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^4.3.0",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest-fetch-mock": "^1.1.1",
+    "react-addons-test-utils": "^15.5.1",
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "sass": "sass --watch src/styles/scss:src/styles/css"
+  }
+}
